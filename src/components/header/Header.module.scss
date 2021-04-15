@@ -1,0 +1,7 @@
+@import "../../../configStyle/theme.scss";
+.nameClass{
+    font-weight: 700;
+    font-size: 50px;
+    background-color: $themeColor;
+    color: $fontColor;
+}

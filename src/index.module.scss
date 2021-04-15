@@ -1,6 +1,8 @@
 @import "../configStyle/style.scss";
 @import "../configStyle/theme.scss";
+$height: 66px;
 .appIndex{
     text-align: center;
     min-width: 500px;
+    height: calc(100% - #{$height});
 }

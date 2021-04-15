@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Header.module.scss'
+import styles from './Main.module.scss'
 
 // class Header extends React.Component{
 //    render(){
@@ -9,10 +9,10 @@ import styles from './Header.module.scss'
 //    }
 // }
 
-const Header:React.FC = ()=>{
+const Main:React.FC = ()=>{
     return(
-        <div className={styles.nameClass}>yuan xiao wei</div>
+        <div className={styles.mainClass}>main</div>
     )
 }
 
-export default Header
+export default Main

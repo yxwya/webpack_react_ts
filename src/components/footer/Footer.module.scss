@@ -1,0 +1,11 @@
+@import "../../../configStyle/theme.scss";
+.footerClass{
+    font-weight: 700;
+    font-size: 50px;
+    background-color: $themeColor;
+    color: $fontColor;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

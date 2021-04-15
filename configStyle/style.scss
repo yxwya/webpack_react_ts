@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body,html{
+    height: 100%;
+}
 //多行处理
 @mixin multiline($n) {
     display: -webkit-box;

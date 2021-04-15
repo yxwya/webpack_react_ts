@@ -17,9 +17,10 @@ module.exports = {
    },
    plugins: [
       new HtmlWebpackPlugin({
-          title: 'yuanxiaowei',
+          title: 'yxw',
          template: path.resolve(__dirname, './public/index.html'),
          filename: 'index.html',
+         favicon: './public/yuan.ico' //yuan.ico文件路径
       }),
       new CleanWebpackPlugin(), // 打包清除dist
       new friendlyErrorsWebpackPlugin(), //命令友好插件

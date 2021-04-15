@@ -1,24 +1,41 @@
 {
     "compilerOptions": {
+    "declaration": true,
      "outDir": "./dist/",
      // "rootDir": "./src",
+     "lib": ["es6", "dom","dom.iterable", "scripthost"],
      "sourceMap": false, // 开启sourcemap
      "module": "commonjs",
      "target": "es5",
      "jsx": "react",
      "esModuleInterop": true,
      "allowJs": true,
+     "checkJs": true,
      "strict": true,
      //点击事件e参数不报错处理
     "noImplicitAny":false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "strictFunctionTypes": false,// 不允许函数参数双向协变
+    "downlevelIteration": true,// 降级遍历器实现，如果目标源是es3/5，那么遍历器会有降级的实现
+    "baseUrl": "./src" // 解析非相对模块的基地址，默认是当前目录
     },
     "include": [
-        "src",
+        "./src/**/*",
         "types/config.d.ts",
         "**/*.ts",
         "**/*.tsx"
-      ]
+      ],
+      "exclude": [
+        "node_modules",
+        "build",
+        "dist",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "src/setupTests.ts",
+        "*.js"
+    ]
     
    }

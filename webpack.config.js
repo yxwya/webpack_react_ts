@@ -1,12 +1,13 @@
 // webpack.config.js
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const friendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
    // mode:'developpment',
-   devtool: 'inline-source-map', //追踪代码报错地方
+   devtool: 'source-map', //追踪代码报错地方
    entry: {
       app: './src/index.tsx'
    },
@@ -23,12 +24,15 @@ module.exports = {
       new CleanWebpackPlugin(), // 打包清除dist
       new friendlyErrorsWebpackPlugin(), //命令友好插件
    ],
+   resolve: {
+      extensions: ['.js','.ts', '.tsx', '.json'],
+    },
    module: {
       rules: [
          // JavaScript
          {
             test: /\.m?js$/,
-            exclude: /node_modules/,
+            exclude: path.resolve(__dirname, 'node_modules'),
             use: {
                loader: 'babel-loader',
                options: {
@@ -39,8 +43,27 @@ module.exports = {
          //ts
          {
             test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
+            exclude: path.resolve(__dirname, 'node_modules'),
+            use: {
+               loader: 'babel-loader',
+               options: {
+                  plugins:[
+                     [
+                        "@babel/plugin-transform-runtime",
+                        {
+                        "absoluteRuntime": false,
+                        "corejs": false,
+                        "helpers": true,
+                        "regenerator": true,
+                        "useESModules": true
+                        }
+                     ],
+                     ["@babel/plugin-syntax-dynamic-import"],
+                     ["@babel/plugin-proposal-class-properties", { "loose" : true }],
+                  ],
+                  presets: ['@babel/preset-env',"@babel/preset-react","@babel/preset-typescript"],
+               },
+            }
          },
          //解析图片
          {

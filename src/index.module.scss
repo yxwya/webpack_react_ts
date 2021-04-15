@@ -2,9 +2,5 @@
 @import "../configStyle/theme.scss";
 .appIndex{
     text-align: center;
-    .name{
-        font-size: 50px;
-        color: red;
-        background-color:$themeColor;
-    }
+    min-width: 500px;
 }

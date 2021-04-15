@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+     "outDir": "./dist/",
+     // "rootDir": "./src",
+     "sourceMap": false, // 开启sourcemap
+     "module": "commonjs",
+     "target": "es5",
+     "jsx": "react",
+     "esModuleInterop": true,
+     "allowJs": true,
+     "strict": true,
+     //点击事件e参数不报错处理
+    "noImplicitAny":false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    },
+    "include": [
+        "src",
+        "types/config.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+      ]
+    
+   }

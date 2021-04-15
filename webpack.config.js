@@ -15,6 +15,7 @@ module.exports = {
       path: path.resolve(__dirname, './dist'),
       filename: '[name].bundle.js',
    },
+
    plugins: [
       new HtmlWebpackPlugin({
           title: 'yxw',
@@ -22,6 +23,8 @@ module.exports = {
          filename: 'index.html',
          favicon: './public/yuan.ico' //yuan.ico文件路径
       }),
+
+
       new CleanWebpackPlugin(), // 打包清除dist
       new friendlyErrorsWebpackPlugin(), //命令友好插件
    ],

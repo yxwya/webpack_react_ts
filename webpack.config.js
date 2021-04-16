@@ -33,17 +33,6 @@ module.exports = {
     },
    module: {
       rules: [
-         // JavaScript
-         {
-            test: /\.m?js$/,
-            exclude: path.resolve(__dirname, 'node_modules'),
-            use: {
-               loader: 'babel-loader',
-               options: {
-                  presets: ['@babel/preset-env'],
-               },
-            },
-         },
          //ts
          {
             test: /\.tsx?$/,
@@ -68,6 +57,17 @@ module.exports = {
                   presets: ['@babel/preset-env',"@babel/preset-react","@babel/preset-typescript"],
                },
             }
+         },
+         // JavaScript
+         {
+            test: /\.m?js$/,
+            exclude: path.resolve(__dirname, 'node_modules'),
+            use: {
+               loader: 'babel-loader',
+               options: {
+                  presets: ['@babel/preset-env'],
+               },
+            },
          },
          //解析图片
          {
